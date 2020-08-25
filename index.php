@@ -71,7 +71,7 @@
                     </tr>
                 </table>
 
-                <button type="submit" class="btn btn-primary">Calculate</button>
+                <button type="submit" class="btn btn-primary" ng-click="calculator.calculate()">Calculate</button>
             </form>
         </div>
         <div id="result">
@@ -86,24 +86,24 @@
                 </thead>
 
                 <tbody>
-                <tr ng-repeat="result in calculator.results">
+                <tr ng-repeat="result_row in calculator.result.rows">
                     <th>
-                        <span ng-bind="result.year"></span>
+                        <span ng-bind="result_row.year"></span>
                     </th>
                     <th>
-                        <span ng-bind="result.month"></span>
+                        <span ng-bind="result_row.month"></span>
                     </th>
                     <th>
-                        <span ng-bind="result.per_month"></span>
+                        <span ng-bind="calculator.result.per_month"></span>
                     </th>
                     <th>
-                        <span ng-bind="result.rest"></span>
+                        <span ng-bind="result_row.rest"></span>
                     </th>
                     <th>
-                        <span ng-bind="result.principal"></span>
+                        <span ng-bind="result_row.principal"></span>
                     </th>
                     <th>
-                        <span ng-bind="result.interest"></span>
+                        <span ng-bind="result_row.interest"></span>
                     </th>
                 </tr>
                 </tbody>
