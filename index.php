@@ -6,7 +6,8 @@
 <head>
     <script src="js/angular1-8-0.js"></script>
     <script src="js/app.js"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+          integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 </head>
 <body>
 <div ng-app="CreditCalcul" ng-controller="CalculatorController as calculator">
@@ -23,7 +24,7 @@
                         </td>
                         <td>
                             <div class="input-group">
-                                <input type="number" step="1000"
+                                <input type="number"
                                        class="form-control"
                                        placeholder="Montant"
                                        id="amount"
@@ -74,7 +75,40 @@
             </form>
         </div>
         <div id="result">
+            <table class="table">
+                <thead>
+                <th>Année</th>
+                <th>Mois</th>
+                <th>Mensualité</th>
+                <th>Restant dû</th>
+                <th>Principal</th>
+                <th>Intérêt</th>
+                </thead>
 
+                <tbody>
+                <tr ng-repeat="result in calculator.results">
+                    <th>
+                        <span ng-bind="result.year"></span>
+                    </th>
+                    <th>
+                        <span ng-bind="result.month"></span>
+                    </th>
+                    <th>
+                        <span ng-bind="result.per_month"></span>
+                    </th>
+                    <th>
+                        <span ng-bind="result.rest"></span>
+                    </th>
+                    <th>
+                        <span ng-bind="result.principal"></span>
+                    </th>
+                    <th>
+                        <span ng-bind="result.interest"></span>
+                    </th>
+                </tr>
+                </tbody>
+
+            </table>
         </div>
     </div>
 </div>
